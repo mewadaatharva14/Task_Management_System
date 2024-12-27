@@ -32,31 +32,21 @@ const db = new sqlite3.Database('./management.db', (err) => {
                 console.error('Error creating user table:', err);
             }
         });
-
-        // Ensure the tasks table exists and has the correct columns
-        db.all(`PRAGMA table_info(tasks)`, (err, rows) => {
+        
+        // create the task table if not exists
+        db.run(`CREATE TABLE IF NOT EXISTS tasks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            description TEXT,
+            startDate TEXT,
+            endDate TEXT,
+            status TEXT,
+            userEmail TEXT,
+            FOREIGN KEY (userEmail) REFERENCES user (email)
+        )`, (err) => {
             if (err) {
-                console.error('Error checking table schema:', err);
+                console.error('Error creating tasks table:', err);
             } else {
-                const columns = rows.map(row => row.name);
-                if (!columns.includes('userEmail')) {
-                    // Create tasks table with userEmail column if it does not exist
-                    db.run(`CREATE TABLE IF NOT EXISTS tasks (
-                        id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        description TEXT,
-                        startDate TEXT,
-                        endDate TEXT,
-                        status TEXT,
-                        userEmail TEXT,
-                        FOREIGN KEY (userEmail) REFERENCES user (email)
-                    )`, (err) => {
-                        if (err) {
-                            console.error('Error creating tasks table:', err);
-                        }
-                    });
-                } else {
-                    console.log('Table "tasks" already exists.');
-                }
+                console.log('Tasks table created successfully or already exists.');
             }
         });
     }
@@ -88,6 +78,8 @@ app.post('/register', (req, res) => {
                     console.error('Error inserting user:', err);
                     res.status(500).send('Server error');
                 } else {
+                    req.session.username = username;
+                    req.email.password = password;
                     res.redirect('/home');
                 }
             });
