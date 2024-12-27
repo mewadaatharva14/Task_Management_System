@@ -1,6 +1,5 @@
 <h1># Task Management System</h1>
 
-![Task Management System](./images/screenshot.png)
 
 ## 📖 About the Project
 The Task Management System is a full-stack application designed to help users manage their tasks efficiently. Users can register, log in, add tasks, view all their tasks, and manage their statuses. The application is built with:
@@ -45,9 +44,6 @@ The Task Management System is a full-stack application designed to help users ma
 - `management.db`: SQLite database file.
 - `public/`: Contains static assets like CSS and JavaScript files.
 
-## 📸 Screenshot
-![Screenshot of Task Management System](./images/screenshot.png)
-
 ## 💻 API Endpoints
 
 ### Authentication
@@ -59,8 +55,6 @@ The Task Management System is a full-stack application designed to help users ma
 - `GET /tasks`: Fetch all tasks for the logged-in user.
 - `POST /task`: Add a new task.
 
-## 📜 License
-This project is licensed under the [MIT License](LICENSE).
 
 ## 🛠️ Technologies Used
 - Node.js
@@ -69,5 +63,4 @@ This project is licensed under the [MIT License](LICENSE).
 - HTML, CSS, JavaScript
 
 ## 🙌 Acknowledgements
-- Inspired by task management systems like Trello and Asana.
 - Built for learning and demonstration purposes.
