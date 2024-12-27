@@ -1,113 +1,73 @@
-Task Management System
+<h1># Task Management System</h1>
 
-🚀 Overview
-The Task Management System is a web-based platform for managing tasks efficiently. It features user authentication, task creation, and retrieval functionalities with a responsive design for seamless user experience. Built with Node.js, Express.js, and SQLite, this project is an excellent starting point for learning full-stack web development.
+![Task Management System](./images/screenshot.png)
 
-✨ Features
-User Authentication: Secure registration and login system.
-Task Operations:
-Create new tasks with description, dates, and status.
-View all tasks for the logged-in user.
-Session Management: Securely manages user sessions with express-session.
-Responsive UI: Styled using Bootstrap for a professional and mobile-friendly interface.
-🛠 Tech Stack
-Backend: Node.js, Express.js
-Database: SQLite
-Frontend: HTML, CSS, Bootstrap
-Session Handling: express-session
-📝 Installation
-Prerequisites
-Ensure the following are installed on your system:
+## 📖 About the Project
+The Task Management System is a full-stack application designed to help users manage their tasks efficiently. Users can register, log in, add tasks, view all their tasks, and manage their statuses. The application is built with:
+- **Backend**: Node.js and SQLite
+- **Frontend**: HTML, CSS, and JavaScript
 
-Node.js (v14 or higher)
-npm (Node Package Manager)
-Steps to Run Locally
-Clone this repository:
+## 🎯 Features
+- Secure user registration and login system.
+- Session management using Express-Session.
+- Add, view, and update task statuses.
+- Responsive and user-friendly design.
 
-bash
-Copy code
-git clone <repository_url>
-cd task-management-system
-Install the required dependencies:
+## 🚀 How to Run the Project
 
-bash
-Copy code
-npm install
-Start the server:
+### Prerequisites
+- Node.js and npm installed on your system.
+- SQLite installed (optional for advanced database management).
 
-bash
-Copy code
-node app.js
-Open your browser and navigate to:
+### Setup
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-repo/task-management-system.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd task-management-system
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Run the server:
+    ```bash
+    node server.js
+    ```
+5. Open the application in your browser at [http://localhost:3000](http://localhost:3000).
 
-arduino
-Copy code
-http://localhost:3000
-📂 Project Structure
-plaintext
-Copy code
-.
-├── app.js              # Main server file
-├── management.db       # SQLite database (auto-generated)
-├── public/
-│   ├── login.html      # Login page
-│   ├── register.html   # Registration page
-│   ├── task.html       # Task management page
-├── Screenshot 2024-12-27 at 12.09.50 PM.png  # Application preview
-├── README.md           # Documentation
-🛤 API Endpoints
-Authentication
-Method	Endpoint	Description
-GET	/	Displays the registration page.
-POST	/register	Registers a new user.
-GET	/lo	Displays the login page.
-POST	/login	Logs in a user.
-GET	/logout	Logs out the current user.
-Task Management
-Method	Endpoint	Description
-GET	/home	Displays the task management page.
-GET	/tasks	Retrieves tasks for the logged-in user.
-POST	/task	Creates a new task for the logged-in user.
-User Info
-Method	Endpoint	Description
-GET	/username	Returns the logged-in user's username.
-👀 Preview
+## 🗂️ Project Structure
+- `server.js`: Contains the server-side logic and routes.
+- `task.html`: The frontend for task management.
+- `register.html` and `login.html`: Authentication pages.
+- `management.db`: SQLite database file.
+- `public/`: Contains static assets like CSS and JavaScript files.
 
-🚀 How It Works
-Register:
+## 📸 Screenshot
+![Screenshot of Task Management System](./images/screenshot.png)
 
-Create an account by providing your username, email, and password.
-Emails must be unique for each user.
-Login:
+## 💻 API Endpoints
 
-Access your account by logging in with your email and password.
-Manage Tasks:
+### Authentication
+- `POST /register`: Register a new user.
+- `POST /login`: Login a user.
+- `GET /logout`: Logout the current user.
 
-View, create, and manage tasks associated with your account.
-Logout:
+### Tasks
+- `GET /tasks`: Fetch all tasks for the logged-in user.
+- `POST /task`: Add a new task.
 
-Securely end your session by logging out.
-🌟 Future Enhancements
-Task Updates: Add functionality to edit and delete tasks.
-Search & Filter: Implement advanced search and filter options.
-Security: Integrate password hashing and a password recovery system.
-📜 License
-This project is licensed under the MIT License. Feel free to use, modify, and distribute this project as needed.
+## 📜 License
+This project is licensed under the [MIT License](LICENSE).
 
-🤝 Contribution
-Contributions are welcome! If you'd like to improve this project:
+## 🛠️ Technologies Used
+- Node.js
+- Express.js
+- SQLite
+- HTML, CSS, JavaScript
 
-Fork this repository.
-Create a feature branch:
-bash
-Copy code
-git checkout -b feature/YourFeature
-Commit your changes:
-bash
-Copy code
-git commit -m 'Add your feature'
-Push to the branch:
-bash
-Copy code
-git push origin feature/YourFeature
-Submit a pull request.
+## 🙌 Acknowledgements
+- Inspired by task management systems like Trello and Asana.
+- Built for learning and demonstration purposes.
